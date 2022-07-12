@@ -5,10 +5,11 @@
  */
 package COSE;
 
-import com.upokecenter.cbor.CBORObject;
-import com.upokecenter.cbor.CBORType;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.upokecenter.cbor.CBORObject;
+import com.upokecenter.cbor.CBORType;
 
 /**
  * The Signer class is used to implement the COSE_Signer object.
@@ -177,7 +178,7 @@ public class Signer extends Attribute {
         return obj;
     }
 
-    public void sign(byte[] rgbBodyProtected, byte[] rgbContent) throws CoseException
+	public void sign(byte[] rgbBodyProtected, byte[] rgbContent) throws CoseException
     {
         if (rgbProtected == null) {
             if(objProtected.size() == 0) rgbProtected = new byte[0];
@@ -193,9 +194,9 @@ public class Signer extends Attribute {
 
         AlgorithmID alg = AlgorithmID.FromCBOR(findAttribute(HeaderKeys.Algorithm));
         
-        rgbSignature = SignCommon.computeSignature(alg, obj.EncodeToBytes(), cnKey);   
+		rgbSignature = SignCommon.computeSignature(alg, obj.EncodeToBytes(), cnKey);
         
-        ProcessCounterSignatures();
+		ProcessCounterSignatures();
     }
     
     public boolean validate(byte[] rgbBodyProtected, byte[] rgbContent) throws CoseException
@@ -234,16 +235,16 @@ public class Signer extends Attribute {
         counterSign1 = value;
     }
     
-    protected void ProcessCounterSignatures() throws CoseException {
+	protected void ProcessCounterSignatures() throws CoseException {
         if (!counterSignList.isEmpty()) {
             if (counterSignList.size() == 1) {
-                counterSignList.get(0).sign(rgbProtected, rgbSignature);
+				counterSignList.get(0).sign(rgbProtected, rgbSignature);
                 addAttribute(HeaderKeys.CounterSignature, counterSignList.get(0).EncodeToCBORObject(), Attribute.UNPROTECTED);
             }
             else {
                 CBORObject list = CBORObject.NewArray();
                 for (CounterSign sig : counterSignList) {
-                    sig.sign(rgbProtected, rgbSignature);
+					sig.sign(rgbProtected, rgbSignature);
                     list.Add(sig.EncodeToCBORObject());
                 }
                 addAttribute(HeaderKeys.CounterSignature, list, Attribute.UNPROTECTED);
@@ -251,7 +252,7 @@ public class Signer extends Attribute {
         }
         
         if (counterSign1 != null) {
-            counterSign1.sign(rgbProtected, rgbSignature);
+			counterSign1.sign(rgbProtected, rgbSignature);
             addAttribute(HeaderKeys.CounterSignature0, counterSign1.EncodeToCBORObject(), Attribute.UNPROTECTED);
         }
     }

@@ -5,9 +5,9 @@
  */
 package COSE;
 
-import org.junit.*;
-import com.upokecenter.cbor.CBORObject;
-import com.upokecenter.cbor.CBORType;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -15,17 +15,23 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.Base64;
 import java.util.Collection;
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
+
+import org.junit.Ignore;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.*;
+import org.junit.runners.Parameterized.Parameter;
+import org.junit.runners.Parameterized.Parameters;
+
+import com.upokecenter.cbor.CBORObject;
+import com.upokecenter.cbor.CBORType;
 
 /**
  *
  * @author jimsch
  */
 @RunWith(Parameterized.class)
+@Ignore
 public class RegressionTest extends TestBase {
     @Parameters(name = "{index}: {0})")
     public static Collection<Object> data() {

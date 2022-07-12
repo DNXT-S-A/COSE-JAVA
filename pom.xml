@@ -6,7 +6,7 @@
 
     <groupId>com.augustcellars.cose</groupId>
     <artifactId>cose-java</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
 
     <name>com.augustcellars.cose:cose-java</name>
     <description>A Java implementation that supports the COSE secure message specification.</description>
@@ -26,19 +26,51 @@
       </developer>
     </developers>
 
+	<!-- 
     <scm>
       <connection>scm:git:https://github.com/cose-wg/cose-java.git</connection>
       <developerConnection>scm:git:https://github.com/cose-wg/cose-java.git</developerConnection>
+      <url>https://github.com/DNXT-S-A/cose-java.git</url>
+    </scm>
+     -->
+     
+    <scm>
+      <connection>scm:git:git@github.com:DNXT-S-A/cose-java.git</connection>
+      <developerConnection>scm:git:git@github.com:DNXT-S-A/cose-java.git</developerConnection>
       <url>https://github.com/cose-wg/cose-java.git</url>
     </scm>
 
+	<repositories>
+		<repository>
+			<id>nexus-releases</id>
+			<url>https://srv-artifactory-prd-01.incm.int/repository/maven-MobileID-release</url>
+		</repository>
+		<repository>
+			<id>nexus-snapshots</id>
+			<url>https://srv-artifactory-prd-01.incm.int/repository/maven-MobileID-snapshots</url>
+		</repository>
+	</repositories>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<url>https://srv-artifactory-prd-01.incm.int/repository/maven-MobileID-snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>nexus-releases</id>
+			<url>https://srv-artifactory-prd-01.incm.int/repository/maven-MobileID-release</url>
+		</repository>
+	</distributionManagement>
+
+    <!-- 
     <distributionManagement>
       <snapshotRepository>
         <id>ossrh</id>
         <url>https://oss.sonatype.org/content/repositories/snapshots</url>
       </snapshotRepository>
     </distributionManagement>
-    
+     -->
+     
     <build>
         <plugins>
             <plugin>
