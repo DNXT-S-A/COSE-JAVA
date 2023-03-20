@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.augustcellars.cose</groupId>
-  <artifactId>cose-java</artifactId>
+  <artifactId>cose-java-dnxt</artifactId>
   <version>1.1.1</version>
 
   <name>com.augustcellars.cose:cose-java</name>
@@ -44,10 +44,16 @@
     <repository>
       <id>dnxt-nexus-snapshots</id>
       <url>https://nexus.dnxt.pt/repository/maven-snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
     </repository>
     <repository>
       <id>dnxt-nexus-releases</id>
       <url>https://nexus.dnxt.pt/repository/maven-releases</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
     </repository>
   </repositories>
 
@@ -55,10 +61,16 @@
     <snapshotRepository>
       <id>dnxt-nexus-snapshots</id>
       <url>https://nexus.dnxt.pt/repository/maven-snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
     </snapshotRepository>
     <repository>
       <id>dnxt-nexus-releases</id>
       <url>https://nexus.dnxt.pt/repository/maven-releases</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
     </repository>
   </distributionManagement>
 
@@ -91,7 +103,8 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.5.1</version>
         <configuration>
-          <source>1.8</source>
+          <source>
+            1.8</source>
           <target>1.8</target>
           <showDeprecation>true</showDeprecation>
           <compilerArgument>
