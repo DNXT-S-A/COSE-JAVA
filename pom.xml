@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.augustcellars.cose</groupId>
-    <artifactId>cose-java</artifactId>
-    <version>1.1.1</version>
+    <artifactId>cose-java-incm</artifactId>
+  	<version>1.1.1</version>
 
     <name>com.augustcellars.cose:cose-java</name>
     <description>A Java implementation that supports the COSE secure message specification.</description>
@@ -26,7 +26,7 @@
       </developer>
     </developers>
 
-	<!-- 
+  <!-- 
     <scm>
       <connection>scm:git:https://github.com/cose-wg/cose-java.git</connection>
       <developerConnection>scm:git:https://github.com/cose-wg/cose-java.git</developerConnection>
@@ -62,7 +62,7 @@
 		</repository>
 	</distributionManagement>
 
-    <!-- 
+  <!-- 
     <distributionManagement>
       <snapshotRepository>
         <id>ossrh</id>
