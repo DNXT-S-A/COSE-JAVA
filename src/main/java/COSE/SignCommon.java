@@ -26,7 +26,7 @@ public abstract class SignCommon extends Message {
 	 * 
 	 * @param provider the crypto provider to use for crypto operations
 	 */
-	public void setCryptoProvider(Provider provider) {
+    public static void setCryptoProvider(Provider provider) {
 		cryptoProvider = provider;
 	}
 
